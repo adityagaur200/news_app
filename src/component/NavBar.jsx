@@ -1,0 +1,52 @@
+import React from 'react'
+
+export default function NavBar() {
+  
+  return (
+    <div>
+      <nav className="navbar navbar-expand-lg navbar-light bg-light ">
+  <div className="container-fluid">
+    <a className="navbar-brand mx-3" href="/">Daily News</a>
+    <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span className="navbar-toggler-icon"></span>
+    </button>
+    <div className="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul className="navbar-nav me-auto mb-2 mb-lg-0">
+        <li className="nav-item">
+          <a className="nav-link active" aria-current="page" href="/">Home</a>
+        </li>
+        <li className="nav-item dropdown">
+          <a className="nav-link dropdown-toggle" href="/" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Categories
+          </a>
+          <ul className="dropdown-menu" aria-labelledby="navbarDropdown">
+            <li><a className="dropdown-item" href="/">General</a></li>
+            <li><a className="dropdown-item" href="/">Business</a></li>
+            <li><a className="dropdown-item" href="/">Science</a></li>
+            <li><a className="dropdown-item" href="/">Entertainment</a></li>
+            <li><a className="dropdown-item" href="/">Health</a></li>
+            <li><a className="dropdown-item" href="/">Sport</a></li>
+            <li><a className="dropdown-item" href="/">Technology</a></li> 
+          </ul>
+        </li>
+        <li className="nav-item dropdown">
+          <a className="nav-link dropdown-toggle" href="/" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Country
+          </a>
+          <ul className="dropdown-menu" aria-labelledby="navbarDropdown">
+            <li><a className="dropdown-item" href="/">India</a></li>
+            <li><a className="dropdown-item" href="/">USA</a></li>
+            <li><a className="dropdown-item" href="/">Australia</a></li>
+            <li><a className="dropdown-item" href="/">England</a></li>
+            <li><a className="dropdown-item" href="/">France</a></li>
+            <li><a className="dropdown-item" href="/">Russia</a></li>
+            <li><a className="dropdown-item" href="/">China</a></li> 
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+    </div>
+  )
+}

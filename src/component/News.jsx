@@ -1,10 +1,12 @@
 import React, { useEffect, useState } from 'react'
 import Newsitems from './Newsitems'
+import NavBar from './NavBar';
+
 
 export default function News(props) {
     const [articles,setArticles] = useState([]);
     const [Page,setPage] = useState(1);
-            
+       
         
      const updateNews = async  () =>{
         const url ="https://newsapi.org/v2/top-headlines?country=in&apiKey=ac0cb3539d494abca02466af3a7c2ebc&page=1";
@@ -61,7 +63,7 @@ export default function News(props) {
     <div className='row'>
         {articles.map((elements)=>{
         return <div className='contanier col-md-3 ' key={elements.url}>
-                <Newsitems title={elements.title} description ={elements.description}  imageUrl={elements.urlToImage} />
+                <Newsitems title={elements.title} description ={elements.description}  imageUrl={elements.urlToImage} readMore={elements.url} />
                 
                </div>
         })}
