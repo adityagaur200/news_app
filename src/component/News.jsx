@@ -7,7 +7,7 @@ export default function News(props) {
     const [totalResult,settotalResult] = useState([]);
     const[Loading,setLoading]=useState(false);   
      const updateNews = async  () =>{
-        const url =`https://newsapi.org/v2/top-headlines?country=in&apiKey=30a492ea896647658b27f025f628c31c&page=1&pagesize=${props.pageSize}`;
+        const url =`https://newsapi.org/v2/top-headlines?country=${props.country}&category=${props.category}&apiKey=30a492ea896647658b27f025f628c31c&page=1&pagesize=${props.pageSize}`;
         setLoading({Loading: true});
         const data = await fetch(url);
         const parsedData = await data.json();
@@ -23,7 +23,7 @@ export default function News(props) {
        {   setPage(Page+1);
            let Pages=Page+1;
            console.log(Pages);
-           const url =`https://newsapi.org/v2/top-headlines?country=in&apiKey=30a492ea896647658b27f025f628c31c&page=${Pages}&pagesize=${props.pageSize}`;
+           const url =`https://newsapi.org/v2/top-headlines?country=${props.country}&category=${props.category}&apiKey=30a492ea896647658b27f025f628c31c&page=${Pages}&pagesize=${props.pageSize}`;
            setLoading({Loading: true});
            const data = await fetch(url);
            const parsedData = await data.json();
@@ -36,7 +36,7 @@ export default function News(props) {
       const PreviousPage = async() =>
            {  setPage(Page-1);
               let Pages=Page-1;
-              const url =`https://newsapi.org/v2/top-headlines?country=in&apiKey=30a492ea896647658b27f025f628c31c&page=${Pages}`;
+              const url =`https://newsapi.org/v2/top-headlines?country=${props.country}&category=${props.category}&apiKey=30a492ea896647658b27f025f628c31c&page=${Pages}`;
               setLoading({Loading: true});
               const data = await fetch(url);
               const parsedData = await data.json();
