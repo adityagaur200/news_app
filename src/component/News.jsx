@@ -59,7 +59,13 @@ export default function News(props) {
     <div className='row'>
         {Loading && articles.map((elements)=>{
         return <div className='contanier col-md-3 ' key={elements.url}>
-                <Newsitems title={elements.title?elements.title:""} description ={elements.description?elements.description:""}  imageUrl={elements.urlToImage} readMore={elements.url} />
+                <Newsitems title={elements.title?elements.title:""}
+                           description ={elements.description?elements.description:""} 
+                           imageUrl={elements.urlToImage}
+                           readMore={elements.url}
+                           author={elements.author}
+                           date={elements.publishedAt}
+                           />
                 
                </div>
         })}
