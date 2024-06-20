@@ -1,12 +1,12 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-
+import Forcast from './Forcast'
 
 export default function NavBar() {
   
   return (
     <div>
-      <nav className="navbar navbar-expand-lg navbar-light bg-light ">
+      <nav className="navbar navbar-expand-lg navbar-dark bg-dark ">
   <div className="container-fluid">
     <Link className="navbar-brand mx-3" to="/">Daily News</Link>
     <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -31,23 +31,13 @@ export default function NavBar() {
             <li><Link className="dropdown-item" to="/Technology">Technology</Link></li> 
           </ul>
         </li>
-        <li className="nav-item dropdown">
-          <Link className="nav-link dropdown-toggle" to="/" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            Country
-          </Link>
-          <ul className="dropdown-menu" aria-labelledby="navbarDropdown">
-            <li><Link className="dropdown-item" to="/India">India</Link></li>
-            <li><Link className="dropdown-item" to="/USA">USA</Link></li>
-            <li><Link className="dropdown-item" to="/Australia">Australia</Link></li>
-            <li><Link className="dropdown-item" to="/England">England</Link></li>
-            <li><Link className="dropdown-item" to="/France">France</Link></li>
-            <li><Link className="dropdown-item" to="/Russia">Russia</Link></li>
-            <li><Link className="dropdown-item" to="/Chaina">China</Link></li> 
-          </ul>
-        </li>
       </ul>
+      <div className='d-flex'>
+        <Forcast/>
+      </div>
     </div>
   </div>
+ 
 </nav>
     </div>
   )

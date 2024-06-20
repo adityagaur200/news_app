@@ -6,7 +6,11 @@ export default function News(props) {
     const [Page,setPage] = useState(1);
     const [totalResult,settotalResult] = useState([]);
     const[Loading,setLoading]=useState(false);   
-     const updateNews = async  () =>{
+    
+    function capitalizeFirstLetter(string) {
+        return string.charAt(0).toUpperCase() + string.slice(1);
+    }
+    const updateNews = async  () =>{
         const url =`https://newsapi.org/v2/top-headlines?country=${props.country}&category=${props.category}&apiKey=30a492ea896647658b27f025f628c31c&page=1&pagesize=${props.pageSize}`;
         setLoading({Loading: true});
         const data = await fetch(url);
@@ -53,7 +57,7 @@ export default function News(props) {
   return (
 <div className='container my-3'>
     <div className='text-center' style={{margin:'35px 0pxs'}}>
-    <h1>Enjoy Your News ...</h1>
+    <h1>Top {capitalizeFirstLetter(props.category)} News</h1>
     {!Loading && <Spinner />}
     </div>
     <div className='row'>
@@ -72,8 +76,8 @@ export default function News(props) {
     
     </div>
     <div class="d-flex justify-content-between">
-    <button type="button" className="btn btn-primary mx-4" onClick={PreviousPage} >Previous</button>
-    <button type="button" className="btn btn-primary mx-4" onClick={NextPage} >Next</button>
+    <button type="button" className="btn btn-dark mx-4" onClick={PreviousPage} >Previous</button>
+    <button type="button" className="btn btn-dark mx-4" onClick={NextPage} >Next</button>
     </div>
     
 </div>
